@@ -1,0 +1,47 @@
+{
+	"description": "Template Object for the templated configuration system"
+	"type": "object",
+	"properties": {
+		"template": {
+			"description": "Any engine appropriate template.  Can be a string or an object",
+			"oneOf": [ 
+				{"type": "string", "description": "A string template"},
+				{"type": "object", "description": "An object based template"}	
+			]	
+		},
+		"tags": {
+			"type": "array",
+			"description": "usage tags to associate with this template and associated template contexts",
+			"items": {
+				"type": "string
+			}
+		},
+		"user_input": {
+			"description": "Extended JSON Schema"
+		},
+		"requirements": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"target": { 
+						"type": "string", 
+						"description": "Target object this expression should run against",
+						"$comment": "This might need to be a dictionary and may also apply to more than one target?"
+					}
+					"expression": {"type": "string", "format": "jsonpath"},
+					"invalid_message": {"type": "string"}
+				}
+			}
+		},
+		"engines": {
+			"type": "array",
+			"description": "Simulation engines that this template is valid for",
+			"items": {
+				"type": "string",
+				"description": "A valid engine identifier"
+			}
+		}
+	},
+	"required": ["template","engines"]
+}
