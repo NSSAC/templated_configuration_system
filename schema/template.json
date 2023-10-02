@@ -27,7 +27,16 @@
 			}
 		},
 		"user_input": {
-			"description": "Extended JSON Schema"
+			"properties": {
+				"schema": {
+					"description": "Extended JSON Schema"
+				},
+				"schematron": ....,
+				"validation_function": {
+					"type": "string",
+					"description": "JS Validation function for this template object"
+				}
+			}
 		},
 		"requirements": {
 			"type": "array",
