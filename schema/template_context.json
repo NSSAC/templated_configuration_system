@@ -1,0 +1,17 @@
+{
+  "properties":{
+      "template_id": {
+          "type": "string"
+      },
+      "parameters": {
+          "type": "object",
+          "$comment": "this object has been validated by the templates user input section"
+      },
+      "tags": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         }
+      }
+  }
+}
