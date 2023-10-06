@@ -38,7 +38,7 @@
                     },
                     "operator": "=",
                     "value": {
-                      "healthState": "Isymp"
+                      "healthState": "I"
                     }
                   }
                 ]
@@ -51,23 +51,15 @@
   },
   "user_input": {
     "properties": {
-
       "healthState": {
         "title": "Health State",
         "description": "",
         "type": "string",
-        "target": [
-          {
-            "jsonPath": "$.payload.interventions.sampling.sampled."
-          }
-        ],
-        "validValues": [
-          {
-            "target": "diseaseModel",
-            "jsonPath": "$..states.*.id"
-          }
-        ]
+        "target"
       }
     }
-  }
+  },
+  "engines": [
+    "EpiHiper"
+  ]
 }
