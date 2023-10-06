@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "$id": "https://github.com/NSSAC/templated_configuration_system/blob/main/schema/userInterfaceMetaSchema.json",
+  "$vocabulary": {
+    "https://json-schema.org/draft/2019-09/vocab/core": true,
+    "https://json-schema.org/draft/2019-09/vocab/applicator": true,
+    "https://json-schema.org/draft/2019-09/vocab/validation": true,
+    "https://json-schema.org/draft/2019-09/vocab/meta-data": true,
+    "https://json-schema.org/draft/2019-09/vocab/format": false,
+    "https://json-schema.org/draft/2019-09/vocab/content": true,
+    "https://github.com/NSSAC/templated_configuration_system/blob/main/schema/vocabulary.md": true
+  },
+  "$recursiveAnchor": true,
+  
+  "title": "User Interface Meta Schema",
+  "allOf": [
+    {
+      "$ref": "http://json-schema.org/draft/2019-09/schema"
+    },
+    {
+      "$recursiveAnchor": true,
+      
+      "title": "storage vocabulary meta-schema",
+      "type": [
+        "object",
+        "boolean"
+      ],
+      "properties": {
+        "validValues": {
+          "description": "Dynamically retrieved valid values for a user interface property.",
+          "type": "array",
+          "default": false,
+          "items": {
+            "type": "object",
+            "required": [
+              "context",
+              "jsonPath"
+            ],
+            "properties": {
+              "context": {
+                "type": "string"
+              },
+              "jsonPath": {
+                "type": "string",
+                "format": "JSONPath"
+              }
+            },
+          "unevaluatedProperties": false
+          }
+        },
+        "target": {
+          "description": "The targets of a user interface property.",
+          "type": "array",
+          "default": false,
+          "items": {
+            "type": "object",
+            "required": [
+              "jsonPath"
+            ],
+            "properties": {
+              "jsonPath": {
+                "type": "string"
+              }
+            },
+          "unevaluatedProperties": false
+          }
+        }
+      }
+    }
+  ]
+}

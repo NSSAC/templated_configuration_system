@@ -49,14 +49,20 @@
       }
     ]
   },
-  "user_input": {
-    "properties": {
-      "healthState": {
-        "title": "Health State",
-        "description": "",
-        "type": "string",
-        "target"
-      }
+	"properties": {
+    "healthState": {
+      "type": "string",
+      "target": [
+        {
+          "jsonPath": "some JSONPath"
+        }
+      ],
+      "validValues": [
+        {
+          "context": "diseaseModel",
+          "jsonPath": "some JSONPath"
+        }
+      ]
     }
   },
   "engines": [
