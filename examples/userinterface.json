@@ -1,5 +1,5 @@
 {
-  "$schema": "../schema/template.json",
+  "$schema": "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/template.json",
   "payload": {
     "$schema": "https://raw.githubusercontent.com/NSSAC/EpiHiper-Schema/master/schema/interventionSchema.json",
     "epiHiperSchema": "https://raw.githubusercontent.com/NSSAC/EpiHiper-Schema/master/schema/interventionSchema.json",
@@ -49,20 +49,22 @@
       }
     ]
   },
-	"properties": {
-    "healthState": {
-      "type": "string",
-      "target": [
-        {
-          "jsonPath": "some JSONPath"
-        }
-      ],
-      "validValues": [
-        {
-          "context": "diseaseModel",
-          "jsonPath": "some JSONPath"
-        }
-      ]
+  "userInterfaceSchema": {
+    "properties": {
+      "healthState": {
+        "type": "string",
+        "target": [
+          {
+            "jsonPath": "some JSONPath"
+          }
+        ],
+        "validValues": [
+          {
+            "context": "diseaseModel",
+            "jsonPath": "some JSONPath"
+          }
+        ]
+      }
     }
   },
   "engines": [

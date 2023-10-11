@@ -5,7 +5,7 @@
  * __target__: The targets of a user interface property.
 
  * __validValues__: Dynamically retrieved valid values for a user interface property.
- 
+
 ### Format
 
- * JSONPath: "A valid [JSONPath](https://support.smartbear.com/readyapi/docs/testing/jsonpath-reference.html#notation")
+ * json_path: "A valid [JSONPath](https://support.smartbear.com/readyapi/docs/testing/jsonpath-reference.html#notation")

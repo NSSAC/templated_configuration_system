@@ -42,7 +42,7 @@
               },
               "jsonPath": {
                 "type": "string",
-                "format": "JSONPath"
+                "format": "json_path"
               }
             },
           "unevaluatedProperties": false
@@ -59,7 +59,8 @@
             ],
             "properties": {
               "jsonPath": {
-                "type": "string"
+                "type": "string",
+                "format": "json_path"
               }
             },
           "unevaluatedProperties": false

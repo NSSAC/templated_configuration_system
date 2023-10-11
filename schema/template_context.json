@@ -1,11 +1,14 @@
 {
-  "properties":{
-      "template_id": {
-          "type": "string"
+    "$schema": "http://json-schema.org/draft/2019-09/schema#",
+    "description": "Captured user input",
+    "type": "object",
+    "properties":{
+      "templateId": {
+          "type": "string",
+          "format": "uri-reference"
       },
       "parameters": {
-          "type": "object",
-          "$comment": "this object has been validated by the templates user input section"
+          "$comment": "this object has already been validated against /templateId#userInterfaceSchema"
       },
       "tags": {
          "type": "array",

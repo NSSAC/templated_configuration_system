@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft/2019-09/schema#",
-  "description": "Template object for augmenting payloads with validated user input ",
+  "description": "Schema for augmenting payloads with validated user input ",
   "type": "object",
   "properties": {
     "payload": {
@@ -26,7 +26,7 @@
         "type": "string"
       }
     },
-    "user_input": {
+    "userInterfaceSchema": {
       "$ref": "./userInterfaceMetaSchema.json"
     },
     "requirements": {
@@ -41,7 +41,7 @@
           },
           "expression": {
             "type": "string",
-            "format": "jsonpath"
+            "format": "json_path"
           },
           "invalid_message": {
             "type": "string"
