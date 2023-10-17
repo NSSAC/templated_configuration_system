@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+// BEGIN: Copyright
+// Copyright (C) 2019 Rector and Visitors of the University of Virginia
+// All rights reserved
+// END: Copyright
+
+// BEGIN: License
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//   http://www.apache.org/licenses/LICENSE-2.0
+// END: License
+
+/* eslint-disable max-len */
+
+const pkg = require('../package.json');
+const commander = require('commander');
+const SchemaValidator = require('../lib/schemaValidator');
+
+let files;
+
+commander
+    .version(pkg.version)
+    .description('Schema Validation')
+    .usage('[options] <file ...>')
+    .option('--schema-dir <schema-dir>', 'Use the schemas in the provided directory instead of the internal ones.')
+    // .option('--no-default', 'Do not add defaults for missing values')
+    .arguments('<files...>')
+    .action(function(_files) {
+      files = _files;
+    });
+
+commander.parse(process.argv);
+
+if (!Array.isArray(files)) {
+  commander.help();
+  process.exit(1);
+}
+
+const schemaValidator = new SchemaValidator(commander.schemaDir);
+schemaValidator
+    .processFiles(schemaValidator.validateSchema.bind(schemaValidator), files)
+    .then((result) => {
+      process.exit(result ? 0 : 1);
+    });

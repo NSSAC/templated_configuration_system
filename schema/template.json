@@ -1,5 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id":  "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/template.json",
   "description": "Schema for augmenting payloads with validated user input ",
   "type": "object",
   "properties": {
@@ -27,7 +28,7 @@
       }
     },
     "userInterfaceSchema": {
-      "$ref": "./userInterfaceMetaSchema.json"
+      "$ref": "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/userInterfaceMetaSchema.json"
     },
     "requirements": {
       "type": "array",

@@ -1,13 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft/2019-09/schema#",
-  "$id": "https://github.com/NSSAC/templated_configuration_system/blob/main/schema/userInterfaceMetaSchema.json",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/userInterfaceMetaSchema.json",
   "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/core": true,
-    "https://json-schema.org/draft/2019-09/vocab/applicator": true,
-    "https://json-schema.org/draft/2019-09/vocab/validation": true,
-    "https://json-schema.org/draft/2019-09/vocab/meta-data": true,
-    "https://json-schema.org/draft/2019-09/vocab/format": false,
-    "https://json-schema.org/draft/2019-09/vocab/content": true,
+    "https://json-schema.org/draft/2019-09/meta/applicator": true,
+    "https://json-schema.org/draft/2019-09/meta/content": true,
+    "https://json-schema.org/draft/2019-09/meta/core": true,
+    "https://json-schema.org/draft/2019-09/meta/format": true,
+    "https://json-schema.org/draft/2019-09/meta/validation": true,
+    "https://json-schema.org/draft/2019-09/meta/meta-data": true,
     "https://github.com/NSSAC/templated_configuration_system/blob/main/schema/vocabulary.md": true
   },
   "$recursiveAnchor": true,
@@ -15,7 +15,7 @@
   "title": "User Interface Meta Schema",
   "allOf": [
     {
-      "$ref": "http://json-schema.org/draft/2019-09/schema"
+      "$ref": "https://json-schema.org/draft/2019-09/schema"
     },
     {
       "$recursiveAnchor": true,

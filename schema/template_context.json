@@ -8,7 +8,7 @@
           "format": "uri-reference"
       },
       "parameters": {
-          "$comment": "this object has already been validated against /templateId#userInterfaceSchema"
+          "description": "this object has already been validated against /templateId#userInterfaceSchema"
       },
       "tags": {
          "type": "array",

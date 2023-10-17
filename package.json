@@ -1,0 +1,34 @@
+{
+	"name": "@shoops/template-configuration-system",
+	"version": "1.6.2",
+	"description": "Utilities for the template configuration system",
+	"bin": {
+		"schemaValidator": "./bin/schemaValidator"
+	},
+	"author": "Stefan Hoops <shoops@virginia.edu>",
+	"license": "Apache-2.0",
+	"dependencies": {
+		"ajv": "^8.12.0",
+		"commander": "^11.1.0",
+		"firstline": "^2.0.2",
+		"text-encoding": "^0.7.0"
+	},
+	"devDependencies": {
+		"eslint": "",
+		"eslint-config-google": ""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NSSAC/templated_configuration_system.git"
+	},
+	"keywords": [
+		"jsonschema",
+		"json",
+		"json-validator",
+		"semantic-validator",
+		"rules-engine"
+	],
+	"bugs": {
+		"url": "https://github.com/NSSAC/templated_configuration_system/issues"
+	}
+}

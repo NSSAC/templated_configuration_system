@@ -1,0 +1,6 @@
+{
+	"schema": [
+		"userInterfaceMetaSchema.json",
+		"template.json"
+	]
+}
