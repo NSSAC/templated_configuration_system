@@ -55,13 +55,13 @@
         "type": "string",
         "target": [
           {
-            "jsonPath": "some JSONPath"
+            "jsonPath": "$.parameters[?(@.name == 'transmissibility')].value"
           }
         ],
         "validValues": [
           {
             "context": "diseaseModel",
-            "jsonPath": "some JSONPath"
+            "jsonPath": "$.parameters[?(@.name == 'transmissibility')].value"
           }
         ]
       }
