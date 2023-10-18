@@ -2,9 +2,9 @@
 
 ## Key Words
 
- * __target__: The targets of a user interface property.
+ * __userInterfaceSchemaTarget__: The targets of a user interface property.
 
- * __validValues__: Dynamically retrieved valid values for a user interface property.
+ * __userInterfaceSchemaValidValues__: Dynamically retrieved valid values for a user interface property.
 
 ### Format
 

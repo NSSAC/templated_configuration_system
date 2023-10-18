@@ -1,24 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id":  "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/template.json",
+  "$id": "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/template.json",
   "description": "Schema for augmenting payloads with validated user input ",
   "type": "object",
   "properties": {
+    "id": {
+      "description": "A unique identifier for the user interface",
+      "type": "string",
+      "format": "uri"
+    },
     "payload": {
-      "description": "Any engine appropriate payload.  Can be a string or an object",
-      "oneOf": [
-        {
-          "type": "string",
-          "description": "A string payload"
-        },
-        {
-          "type": "object",
-          "description": "An object based payload",
-          "required": [
-            "$schema"
-          ]
-        }
-      ]
+      "description": "A string payload",
+      "type": "string"
+    },
+    "payloadRef": {
+      "description": "A URI to an external payload.",
+      "type": "string",
+      "format": "uri"
     },
     "tags": {
       "type": "array",
@@ -59,8 +57,20 @@
       }
     }
   },
-  "required": [
-    "payload",
-    "engines"
+  "oneOf": [
+    {
+      "required": [
+        "id",
+        "payload",
+        "engines"
+      ]
+    },
+    {
+      "required": [
+        "id",
+        "payloadRef",
+        "engines"
+      ]
+    }
   ]
 }

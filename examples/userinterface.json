@@ -1,72 +1,30 @@
 {
   "$schema": "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/template.json",
-  "payload": {
-    "$schema": "https://raw.githubusercontent.com/NSSAC/EpiHiper-Schema/master/schema/interventionSchema.json",
-    "epiHiperSchema": "https://raw.githubusercontent.com/NSSAC/EpiHiper-Schema/master/schema/interventionSchema.json",
-    "sets": [
-      {
-        "id": "custom_population",
-        "ann:label": "Custom Sub Population",
-        "scope": "local",
-        "content": {
-          "scope": "local",
-          "elementType": "node"
-        }
-      }
-    ],
-    "triggers": [],
-    "interventions": [
-      {
-        "id": "intervention_1",
-        "target": {
-          "set": {
-            "idRef": "custom_population"
-          }
-        },
-        "sampling": {
-          "type": "absolute",
-          "number": 25,
-          "sampled": {
-            "foreach": [
-              {
-                "operations": [
-                  {
-                    "target": {
-                      "node": {
-                        "property": "healthState"
-                      }
-                    },
-                    "operator": "=",
-                    "value": {
-                      "healthState": "I"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      }
-    ]
-  },
+  "id": "https://github.com/NSSAC/templated_configuration_system/blob/main/examples/userinterface.json",
+  "payloadRef": "https://github.com/NSSAC/templated_configuration_system/blob/main/examples/payload.json",
   "userInterfaceSchema": {
+    "type": "object",
     "properties": {
       "healthState": {
         "type": "string",
-        "target": [
+        "userInterfaceSchemaTarget": [
           {
-            "jsonPath": "$.parameters[?(@.name == 'transmissibility')].value"
+            "jsonPath": "$.interventions[0].sampling.sampled.foreach[0].operations[0].value.healthState"
           }
         ],
-        "validValues": [
+        "userInterfaceSchemaValidValues": [
           {
             "context": "diseaseModel",
             "jsonPath": "$.parameters[?(@.name == 'transmissibility')].value"
           }
         ]
       }
-    }
+    },
+    "unevaluatedProperties": false
   },
+  "tags": [
+    "intervention"
+  ],
   "engines": [
     "EpiHiper"
   ]

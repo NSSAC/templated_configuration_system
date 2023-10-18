@@ -1,20 +1,24 @@
 {
-    "$schema": "http://json-schema.org/draft/2019-09/schema#",
-    "description": "Captured user input",
-    "type": "object",
-    "properties":{
-      "templateId": {
-          "type": "string",
-          "format": "uri-reference"
-      },
-      "parameters": {
-          "description": "this object has already been validated against /templateId#userInterfaceSchema"
-      },
-      "tags": {
-         "type": "array",
-         "items": {
-            "type": "string"
-         }
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/template_context.json",
+  "description": "Captured user input",
+  "type": "object",
+  "properties": {
+    "templateId": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
-  }
+    }
+  },
+  "required": [
+    "templateId"
+  ]
 }

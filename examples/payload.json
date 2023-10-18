@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/NSSAC/EpiHiper-Schema/master/schema/interventionSchema.json",
+  "epiHiperSchema": "https://raw.githubusercontent.com/NSSAC/EpiHiper-Schema/master/schema/interventionSchema.json",
+  "sets": [
+    {
+      "id": "custom_population",
+      "ann:label": "Custom Sub Population",
+      "scope": "local",
+      "content": {
+        "scope": "local",
+        "elementType": "node"
+      }
+    }
+  ],
+  "triggers": [],
+  "interventions": [
+    {
+      "id": "intervention_1",
+      "target": {
+        "set": {
+          "idRef": "custom_population"
+        }
+      },
+      "sampling": {
+        "type": "absolute",
+        "number": 25,
+        "sampled": {
+          "foreach": [
+            {
+              "operations": [
+                {
+                  "target": {
+                    "node": {
+                      "property": "healthState"
+                    }
+                  },
+                  "operator": "=",
+                  "value": {
+                    "healthState": "I"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

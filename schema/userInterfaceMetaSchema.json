@@ -26,7 +26,7 @@
         "boolean"
       ],
       "properties": {
-        "validValues": {
+        "userInterfaceSchemaValidValues": {
           "description": "Dynamically retrieved valid values for a user interface property.",
           "type": "array",
           "default": false,
@@ -48,7 +48,7 @@
           "unevaluatedProperties": false
           }
         },
-        "target": {
+        "userInterfaceSchemaTarget": {
           "description": "The targets of a user interface property.",
           "type": "array",
           "default": false,

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/NSSAC/templated_configuration_system/main/schema/template_context.json",
+  "templateId": "https://github.com/NSSAC/templated_configuration_system/blob/main/examples/userinterface.json",
+  "parameters": {
+    "healthState": "Isymp"
+  },
+  "tags": [
+    "intervention"
+  ]
+}
